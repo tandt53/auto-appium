@@ -1,0 +1,49 @@
+{
+    "name": "automation-appium",
+    "version": "1.0.0",
+    "description": "Collection of supported methods for automating mobile application both native and hybrid",
+    "scripts": {
+        "clean": "rm -rf allure-report/ allure-results/ .tmp/",
+        "local.run": "ENV=Stage wdio ./config/wdio.local.config.ts",
+        "ci.run": "wdio ./config/wdio.ci.config.ts",
+        "report": "allure generate --clean -o allure-report",
+        "report.view": "allure open allure-report"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xendit/mobile-store-qa-automation.git"
+    },
+    "keywords": [
+        "WebdriverIO",
+        "WebDriver",
+        "appium",
+        "native app",
+        "hybrid",
+        "android",
+        "ios"
+    ],
+    "author": "XenQA Mobile Store",
+    "homepage": "https://github.com/xendit/mobile-store-qa-automation#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "@wdio/allure-reporter": "^7.20.7",
+        "@wdio/appium-service": "^7.20.7",
+        "@wdio/browserstack-service": "^7.20.7",
+        "@wdio/cli": "^7.20.7",
+        "@wdio/cucumber-framework": "7.20.7",
+        "@wdio/local-runner": "^7.19.7",
+        "@wdio/mocha-framework": "^7.20.7",
+        "@wdio/shared-store-service": "^7.23.0",
+        "@wdio/spec-reporter": "^7.20.7",
+        "allure-commandline": "^2.18.1",
+        "appium-flutter-driver": "^1.4.0",
+        "appium-flutter-finder": "^0.1.0",
+        "browserstack-local": "^1.5.1",
+        "eslint-plugin-wdio": "^7.19.4",
+        "ts-node": "^10.8.0",
+        "wdio-cucumberjs-json-reporter": "^4.4.3",
+        "qrcode-reader": "1.0.4",
+        "jimp": "^0.16.1"
+    }
+}
