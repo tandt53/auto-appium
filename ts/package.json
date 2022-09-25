@@ -1,5 +1,5 @@
 {
-    "name": "automation-appium",
+    "name": "auto-appium",
     "version": "1.0.0",
     "description": "Collection of supported methods for automating mobile application both native and hybrid",
     "scripts": {
@@ -22,7 +22,7 @@
         "android",
         "ios"
     ],
-    "author": "XenQA Mobile Store",
+    "author": "tandt53",
     "homepage": "https://github.com/xendit/mobile-store-qa-automation#readme",
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.25.0",
