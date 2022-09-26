@@ -30,8 +30,6 @@ class FlutterElement {
         await driver.elementClick(selector);
     }
 
-
-
     async getText(selector: string) {
         return await driver.getElementText(selector);
     }

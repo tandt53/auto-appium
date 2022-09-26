@@ -1,4 +1,4 @@
-import { config } from "./wdio.shared.config";
+import { config } from "./wdio.conf";
 
 const androidCaps = [
     {
@@ -9,8 +9,7 @@ const androidCaps = [
         'appium:platformVersion': "9.0",
         'appium:autoAcceptAlerts': true,
         'appium:newCommandTimeout': 20000,
-        'appium:appPackage': 'co.xendit.business.dev',
-        'appium:app': process.env.BROWSERSTACK_APP_ID || 'bs://2c053ba41cde2dd9af1d402ba325e6bc4a018528',
+        'appium:app': process.env.BROWSERSTACK_APP_ID ,
         'bstack:options': {
             'debug': true,
             'appiumVersion': '1.22.0',
@@ -29,7 +28,7 @@ const iosCaps = [
         'appium:platformVersion': '13',
         'appium:autoAcceptAlerts': true,
         'appium:newCommandTimeout': 20000,
-        'appium:app': process.env.BROWSERSTACK_APP_ID || 'bs://663759f9b3805fda8dec61fa738ec093eea47864',
+        'appium:app': process.env.BROWSERSTACK_APP_ID,
         'bstack:options': {
             'debug': true,
             'appiumVersion': '1.22.0',

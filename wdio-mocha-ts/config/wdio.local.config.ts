@@ -1,5 +1,4 @@
-import { config } from "./wdio.shared.config";
-import { join } from "path";
+import {config} from "./wdio.conf";
 
 const androidCaps = [
     {
@@ -8,8 +7,7 @@ const androidCaps = [
         "appium:deviceName": "emulator",
         "appium:platformVersion": "12",
         "appium:automationName": "Flutter",
-        "appium:app": "/Users/tando/projects/xendit-for-business-mobile/build/app/outputs/flutter-apk/app-debug.apk",
-        "appium:appPackage": "co.xendit.business.dev",
+        "appium:app": "/Users/tando/projects/gallery/build/app/outputs/apk/debug/app-debug.apk",
         "appium:newCommandTimeout": 50000,
     },
 ];
@@ -18,13 +16,12 @@ const iosCaps = [
     {
         "platformName": "iOS",
         maxInstances: 1,
-        "appium:deviceName": "iPhone 13 Pro Max",
-        "appium:platformVersion": "15.5",
+        "appium:deviceName": "iPhone 14 Pro Max",
+        "appium:platformVersion": "16.0",
         "appium:automationName": "Flutter",
         "appium:autoAcceptAlerts": true,
-        "appium:app": "/Users/tando/projects/xendit-for-business-mobile/build/ios/iphonesimulator/Runner.app",
+        "appium:app": "/Users/tando/projects/gallery/build/ios/Debug-iphonesimulator/Runner.app",
         "appium:newCommandTimeout": 20000,
-        "appium:fullReset": true
     },
 ];
 
