@@ -4,7 +4,7 @@ class FlutterActions {
         await driver.execute('flutter:scroll', listViewSelector, {
             dx: 50,
             dy: -100,
-            durationMilliseconds: 200,
+            durationMilliseconds: 2000,
             frequency: 30
         })
     }
@@ -22,10 +22,6 @@ class FlutterActions {
                     elementId: selector
                 }
         })
-    }
-
-    scrollToView(): void {
-        // TODO: implement scrollToView
     }
 
 }

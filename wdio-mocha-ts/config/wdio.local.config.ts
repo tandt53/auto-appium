@@ -16,12 +16,15 @@ const iosCaps = [
     {
         "platformName": "iOS",
         maxInstances: 1,
-        "appium:deviceName": "iPhone 14 Pro Max",
-        "appium:platformVersion": "16.0",
+        "appium:deviceName": "iPhone 13 Pro",
+        "appium:platformVersion": "15.5",
         "appium:automationName": "Flutter",
         "appium:autoAcceptAlerts": true,
         "appium:app": "/Users/tando/projects/gallery/build/ios/Debug-iphonesimulator/Runner.app",
         "appium:newCommandTimeout": 20000,
+        "appium:fullReset": true,
+        "appium:bundleId": "io.flutter.demo.gallery",
+        "appium:showXcodeLog": true
     },
 ];
 
