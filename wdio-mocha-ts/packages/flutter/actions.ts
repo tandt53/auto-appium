@@ -1,4 +1,4 @@
-class FlutterActions {
+export class FlutterActions {
 
     async scroll(listViewSelector: string) {
         await driver.execute('flutter:scroll', listViewSelector, {
@@ -26,5 +26,4 @@ class FlutterActions {
 
 }
 
-export default new FlutterActions();
 

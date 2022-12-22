@@ -1,4 +1,4 @@
-class FlutterElement {
+export class FlutterElement {
 
     /**
      * This method is to check an element to be displayed.
@@ -43,4 +43,3 @@ class FlutterElement {
 
 }
 
-export default new FlutterElement();
