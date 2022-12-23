@@ -1,5 +1,5 @@
-import {FlutterElement} from "../../../packages/flutter";
-import {FlutterActions} from "../../../packages/flutter";
+import {FlutterElement} from "../../../src/flutter";
+import {FlutterActions} from "../../../src/flutter";
 import {byType, byValueKey, descendant} from "appium-flutter-finder";
 import { setTimeout } from "timers/promises";
 
@@ -37,16 +37,16 @@ describe('flutter element', function () {
     //     expect(await element.isDisplayed(text)).toBe(true);
     // });
 
-    it('scroll down', async function () {
-        const material: string = byValueKey('materialCategoryHeader');
-        await element.click(material);
-
-        const list = byValueKey('materialDemoList')
-        await actions.scroll(list);
-        await setTimeout(2000);
-        const buttonItem = byValueKey('button@material')
-        expect(await element.isDisplayed(buttonItem)).toBe(true);
-    });
+    // it('scroll down', async function () {
+    //     const material: string = byValueKey('materialCategoryHeader');
+    //     await element.click(material);
+    //
+    //     const list = byValueKey('materialDemoList')
+    //     await actions.scroll(list);
+    //     await setTimeout(2000);
+    //     const buttonItem = byValueKey('button@material')
+    //     expect(await element.isDisplayed(buttonItem)).toBe(true);
+    // });
 
 
 });

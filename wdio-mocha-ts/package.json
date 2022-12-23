@@ -13,10 +13,9 @@
         "wdio-wait-for": "^2.2.6",
         "appium-flutter-driver": "^1.4.0",
         "appium-flutter-finder": "^0.1.0",
-        "appium": "^1.22.3",
         "@wdio/shared-store-service": "^7.23.0"
     },
     "scripts": {
-        "wdio": "wdio run config/wdio.local.config.ts"
+        "wdio": "APP=wdio_android wdio run config/wdio.local.config.ts"
     }
 }

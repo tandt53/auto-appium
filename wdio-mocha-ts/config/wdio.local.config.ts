@@ -1,5 +1,5 @@
 import {config} from "./wdio.conf";
-import {apiDemo, gallery_android, gallery_ios, uiCatalog} from "./apps";
+import {apiDemo, gallery_android, gallery_ios, uiCatalog, wdio_android, wdio_ios} from "./apps";
 
 
 const platform = (process.env.PLATFORM || "android").trim();
@@ -17,6 +17,13 @@ switch (app) {
     case "uiCatalog":
         config.capabilities = uiCatalog;
         break;
+    case "wdio_android":
+        config.capabilities = wdio_android;
+        break;
+    case "wdio_ios":
+        config.capabilities = wdio_ios;
+        break;
+
     default:
         throw new Error(`Invalid app: ${app}`);
 
@@ -24,7 +31,7 @@ switch (app) {
 
 
 config.hostname = "127.0.0.1";
-config.port = 4723;
+config.port = 4724;
 config.path = "/wd/hub";
 
 

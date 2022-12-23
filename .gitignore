@@ -125,3 +125,8 @@ dist
 .pnp.*
 
 target/
+
+**/*.apk
+**/*.ipa
+**/*.zip
+**/*.app

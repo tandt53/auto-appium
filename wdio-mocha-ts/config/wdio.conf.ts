@@ -1,5 +1,12 @@
 import type { Options } from '@wdio/types'
 
+const fs = require('fs');
+const screenshots = './screenshots';
+
+if (!fs.existsSync(screenshots)) {
+    fs.mkdirSync(screenshots);
+}
+
 export const config: Options.Testrunner = {
     //
     // ====================
@@ -265,13 +272,8 @@ export const config: Options.Testrunner = {
      * @param {Boolean} result.passed    true if test has passed, otherwise false
      * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
-        if (!passed) {
-            await browser.takeScreenshot();
-        }
-    },
-
-
+    // afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    // },
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
@@ -321,4 +323,30 @@ export const config: Options.Testrunner = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
+
+    /**
+     * Function to be executed after a test (in Mocha/Jasmine only)
+     * @param {Object}  test             test object
+     * @param {Object}  context          scope object the test was executed with
+     * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
+     * @param {Any}     result.result    return object of test function
+     * @param {Number}  result.duration  duration of test
+     * @param {Boolean} result.passed    true if test has passed, otherwise false
+     * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
+     */
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+        // if test passed, ignore, else take and save screenshot.
+        if (!passed || error) {
+            console.log('Test failed, taking screenshot');
+            // get current test title and clean it, to use it as file name
+            const filename = encodeURIComponent(test.title.replace(/\s+/g, '-'));
+            // build file path
+            const filePath = `${screenshots}/${filename}.png`;
+            // save screenshot
+            await browser.saveScreenshot(filePath);
+            console.log('Screenshot location:', filePath, '\n');
+        } else {
+            console.log('Test passed');
+        }
+    }
 }
